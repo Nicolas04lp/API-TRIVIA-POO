@@ -34,8 +34,8 @@ export default class Request {
                 answerIncorrectCount++;
             }
         })
-        // localStorage.setItem("Buenas", answerCorrectCount);
-        // localStorage.setItem("Malas", answerIncorrectCount); 
+        localStorage.setItem("Buenas", answerCorrectCount);
+        localStorage.setItem("Malas", answerIncorrectCount); 
         console.log('Buenas'+answerCorrectCount)
         console.log('Malas'+ answerIncorrectCount)
         // window.location.href = "/answers.html";
