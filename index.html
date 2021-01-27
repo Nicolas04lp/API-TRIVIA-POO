@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/questions"  id="form-questions">
+                            <div class="form-group">
+                                <label for="total-questions">Total questions</label>
+                                <select class="form-control" id="total-questions">
+                                  <option>5</option>
+                                  <option>10</option>
+                                  <option>15</option>
+                                  <option>20</option>
+                                  <option>25</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-categories">Category</label>
+                                <select class="form-control" id="select-categories">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-difficulty">Difficulty</label>
+                                <select class="form-control" id="select-difficulty">
+                                    <option value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="select-type">Type</label>
+                                <select class="form-control" id="select-type">
+                                    <option value="multiple">Multiple</option>
+                                    <option value="boolean">Falso o verdadero</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary btn-block">
+                                Obtener Preguntas
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Questions container -->
+        <div class="row" id="questions-container">
+
+        </div>
+        <form action="/Answers" id="form-checkQuestions">
+            <button class="btn btn-secondary btn-block mt-2">
+                Enviar respuestas
+            </button>
+        </form>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
