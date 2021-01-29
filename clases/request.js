@@ -1,7 +1,7 @@
 let answersChecked = [];
 let answerCorrectCount = 0;
 let answerIncorrectCount = 0;
-let answerCorrect = [ ];
+
 export default class Request {
     static getCategories() {
         return fetch('https://opentdb.com/api_category.php')
@@ -23,22 +23,25 @@ export default class Request {
     for(let i = 0; i < checkedInputs.length; i++){
         answersChecked.push(checkedInputs[i].value);
     }
-    console.log(answersChecked);
+    // console.log(answersChecked);
     }
     static comparationAnswers(){
-        answersChecked.forEach((b) => {
+        let answerCorrect = JSON.parse(localStorage.getItem('Buenas'));
+        answersChecked.forEach((b, index) => {
             // si answer corect es igual a answercheckÂ¿ek que le sume uno a correctcount
-            if(answersChecked[b] == answerCorrect[b]){
+            if(answerCorrect[index] == answersChecked[index]){
                 answerCorrectCount++ ;
             }else{
                 answerIncorrectCount++;
             }
         })
-        localStorage.setItem("Buenas", answerCorrectCount);
-        localStorage.setItem("Malas", answerIncorrectCount); 
+        // console.log(answerCorrect)
+        // console.log(answersChecked)
         console.log('Buenas'+answerCorrectCount)
         console.log('Malas'+ answerIncorrectCount)
-        // window.location.href = "/answers.html";
+        localStorage.setItem("Correctas", answerCorrectCount);
+        localStorage.setItem("Incorrectas", answerIncorrectCount);
+        window.location.href = "/answers.html";
     
     }
 }

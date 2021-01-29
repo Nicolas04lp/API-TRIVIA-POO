@@ -19,6 +19,7 @@ formQuestion.addEventListener('submit', (event) =>{
     Request.comparationAnswers()
 })
 
+
 Request.getCategories()
     .then(response => response.json())
     .then(data => UI.printCategories(data.trivia_categories))

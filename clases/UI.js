@@ -1,6 +1,5 @@
 let answerCorrect = [];
 let answerIncorrect = [];
-console.log(answerCorrect)
 export default class UI {
     static printCategories(categories) {
         const container = document.getElementById('select-categories');
@@ -18,7 +17,6 @@ export default class UI {
                 i++
                 let randomD = random(element.correct_answer, element.incorrect_answers);
     
-                // total.push(element.correct_answer , ...element.incorrect_answers) 
                 answerCorrect.push(element.correct_answer)
                 answerIncorrect.push(element.incorrect_answers)
                 container.innerHTML += `<div class="col-md-4 mt-2">
@@ -36,7 +34,7 @@ export default class UI {
                                                     ${element.correct_answer}
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value="${randomD[0]}" name="result${[i]}" id="answer${[i]}0" required checke>
+                                                    <input class="form-check-input" type="radio" value="${randomD[0]}" name="result${[i]}" id="answer${[i]}0" required checked>
                                                     <label class="form-check-label" for="answer${[i]}">
                                                          ${randomD[0]}
                                                     </label>
@@ -68,11 +66,16 @@ export default class UI {
                                         
     
             });
+            // localStorage.setItem('buenas', answerCorrect)
+            localStorage.setItem('Buenas', JSON.stringify(answerCorrect));
+            localStorage.setItem('Malas', answerIncorrect);
             
         }else{
             questions.forEach((element, i) => {
     
                 let randomD = random(element.correct_answer, element.incorrect_answers);
+                answerCorrect.push(element.correct_answer)
+                answerIncorrect.push(element.incorrect_answers)
                 // total.push(element.correct_answer , ...element.incorrect_answers) 
     
                 container.innerHTML += `<div class="col-md-4 mb-4">
@@ -109,6 +112,8 @@ export default class UI {
             });
             // console.log(totalAnswerCorrect)
             // console.log(totalAnswerIncorrect);
+            localStorage.setItem('Buenas', answerCorrect);
+            localStorage.setItem('Malas', answerIncorrect);
         }
         function random(correct, incorrects){
             const  array = [correct, ...incorrects];
