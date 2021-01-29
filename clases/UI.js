@@ -34,7 +34,7 @@ export default class UI {
                                                     ${element.correct_answer}
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" value="${randomD[0]}" name="result${[i]}" id="answer${[i]}0" required checked>
+                                                    <input class="form-check-input" type="radio" value="${randomD[0]}" name="result${[i]}" id="answer${[i]}0" required>
                                                     <label class="form-check-label" for="answer${[i]}">
                                                          ${randomD[0]}
                                                     </label>
